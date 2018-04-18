@@ -11,6 +11,7 @@ type
     Image1: TImage;
     Timer1: TTimer;
     Button1: TButton;
+    Label1: TLabel;
     procedure Timer1Timer(Sender: TObject);
   private
     { Private declarations }
@@ -26,6 +27,8 @@ implementation
 
 {$R *.dfm}
 
+///  Draw a Clock Quadrant on a rhombus, where colors indicate a portion of the clock quadrant
+
 procedure TForm1.DisegnaQuadranteOrario(unita, cx, cy, dx, dy: integer);
 var
     qdr,tri,pent: integer;
@@ -37,6 +40,14 @@ begin
   qdr := unita div 15;
   tri := (unita mod 15) div 5;
   pent := (unita mod 5);
+
+  x1 := 0;
+  x2 := 0;
+  x3 := 0;
+
+  y1 := 0;
+  y2 := 0;
+  y3 := 0;
 
   Image1.Canvas.MoveTo(cx+0,cy-dy);
   if qdr = 0 then Image1.Canvas.Pen.Color := clBlue else Image1.Canvas.Pen.Color := clSilver;
@@ -86,8 +97,6 @@ begin
   for i := 0 to 4 do
   begin
     ang := 180 - 45 - (qdr * 90) + (i * 72);
-    // px[i] := trunc(75 * sin((2*pi)/360*ang)+180-((x1-180) div 2));
-    // py[i] := trunc(75 * cos((2*pi)/360*ang)+180-((y1-180) div 2));
     px[i] := trunc((75/180)*dx * sin((2*pi)/360*ang)+cx-((x1-cx) div 2));
     py[i] := trunc((75/180)*dy * cos((2*pi)/360*ang)+cy-((y1-cy) div 2));
   end;
@@ -105,20 +114,25 @@ begin
 
 end;
 
+///  Every seconds all the time quadrants are draw as rhombuses, where colors indicate a portion of the clock quadrant
+
 procedure TForm1.Timer1Timer(Sender: TObject);
 var hh,mm,secondi,ms: word;
     cx,cy,dx,dy: integer;
     cx1,cy1,dx1,dy1: integer;
     testo: string;
     orario: TDateTime;
+    hh1: integer;
 begin
   // disegnare un rombo quadrato, un triangolo equilatero, un pentagono regolare
   // con uno dei lati colorato in base ai secondi
   // 60" = 4 * 15" + 3 * 5" + 5 * 1"
   orario := now;
   DecodeTime(orario,hh,mm,secondi,ms);
-
-  Image1.Canvas.Brush.Color := clYellow;
+  if (hh div 12) = 0 then
+    Image1.Canvas.Brush.Color := clYellow
+  else
+    Image1.Canvas.Brush.Color := clYellow-1024-32;
   Image1.Canvas.FillRect(Image1.ClientRect);
   Image1.Canvas.Pen.Width := 2;
   //
@@ -141,9 +155,11 @@ begin
   DisegnaQuadranteOrario(mm,cx,cy,dx,dy);
 
   // separazione quadranti per le ore
+  hh1 := hh mod 12;
+  // label1.Caption := IntToStr(hh1) + ' - ' +IntToStr(hh1*5+(mm div 5));
   cx := cx1 - (cx1 div 2);
   cy := cy1 - (cy1 div 2);
-  DisegnaQuadranteOrario((hh*5+(mm div 5))mod 60,cx,cy,dx,dy);
+  DisegnaQuadranteOrario((hh1*5+(mm div 12))  mod 60,cx,cy,dx,dy);
 
   // in base a mattino, pomeriggio mette un disegno al 4 quadrante
   cx := cx1 + (cx1 div 2);

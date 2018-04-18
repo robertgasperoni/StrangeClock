@@ -1,9 +1,9 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  Caption = 'Form1'
-  ClientHeight = 387
-  ClientWidth = 463
+  Caption = 'Strange Clock'
+  ClientHeight = 405
+  ClientWidth = 380
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,17 +19,24 @@ object Form1: TForm1
     Width = 360
     Height = 360
   end
+  object Label1: TLabel
+    Left = 144
+    Top = 376
+    Width = 3
+    Height = 13
+  end
   object Button1: TButton
-    Left = 380
-    Top = 248
+    Left = 8
+    Top = 372
     Width = 75
     Height = 25
     Caption = 'Button1'
     TabOrder = 0
+    Visible = False
   end
   object Timer1: TTimer
     OnTimer = Timer1Timer
-    Left = 400
-    Top = 40
+    Left = 88
+    Top = 368
   end
 end
