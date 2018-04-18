@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/01/26 16:37:20.000.075,=C:\Users\Robert\Documents\Embarcadero\Studio\Projects\GridPaneView1.pas</Transaction>
+    <Transaction>2016/01/26 16:37:23.000.381,=C:\Users\Robert\Documents\Embarcadero\Studio\Projects\SplitPaneView1.pas</Transaction>
+    <Transaction>2017/07/24 15:55:38.000.618,=C:\Users\Robert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/11/22 08:15:28.000.704,=C:\Users\Robert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/03/26 17:31:31.000.663,=C:\Users\Robert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/03/26 17:45:55.000.924,C:\Users\Robert\Documents\Embarcadero\Studio\Projects\OrologioStrano\Unit1.dfm=C:\Users\Robert\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2018/03/26 17:45:55.000.924,C:\Users\Robert\Documents\Embarcadero\Studio\Projects\OrologioStrano\Unit1.pas=C:\Users\Robert\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/03/26 17:46:02.000.844,C:\Users\Robert\Documents\Embarcadero\Studio\Projects\OrologioStrano\OrologioStrano.dproj=C:\Users\Robert\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2018/03/27 18:44:14.024,=C:\Users\Robert\Documents\Embarcadero\Studio\Projects\OrologioStrano\Unit2.pas</Transaction>
+    <Transaction>2018/03/27 18:44:34.902,C:\Users\Robert\Documents\Embarcadero\Studio\Projects\OrologioStrano\Globe.pas=C:\Users\Robert\Documents\Embarcadero\Studio\Projects\OrologioStrano\Unit2.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>
